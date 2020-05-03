@@ -2,7 +2,7 @@
 
 Status: Draft
 
-Last updated: 2 May 2020
+Last updated: 3 May 2020
 
 Authors: billings@synopsys.com
 
@@ -24,6 +24,7 @@ Changelog
 | ------------ | ----------------------------------------------------- | -------------- |
 | billings     | Initial draft                                         | 17 Apr 2020    |
 | billings     | Extended to macros                                    | 2 May 2020     |
+| billings     | Expanded background section                           | 3 May 2020     |
 
 
 ## Objective
@@ -35,6 +36,9 @@ Provide a single mechanism that reveals the external package dependency details 
 - Some organizations must provide evidence that their software product is free of serious security vulnerabilities before it is released. In order to do that, they (or much more likely, the tools they use) first need to generate a list of external package dependencies with sufficient details to unambiguously identify those external packages.
 - Currently, there is no single way to do this that works across all repository rule types.
 - This makes it difficult to develop tools for the current repository rule set, and impossible to develop tools that will continue to work as new repository rule types are developed.
+- A user or tool developer can rely on the fact that the *gradle dependencies* command will reveal the external dependency details for any gradle project, and will continue to do so in future gradle versions, regardless of how the project uses gradle.
+  It's similar for *mvn dependency:tree* for any maven project.
+  Enterprise adoption of bazel would be easier if bazel provided a similarly simple and reliable solution.
 
 ## Goals
 
